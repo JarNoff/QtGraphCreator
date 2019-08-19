@@ -8,6 +8,7 @@ DataView::DataView(QWidget* parent) : QTableWidget(parent)
     setColumnCount(parser->getColCount());
 
     QList<QList<QString>> data = parser->getData();
+    setHorizontalHeaderLabels(parser->getContents());
 
     int rowCount = parser->getRowCount();
     int colCount = parser->getColCount();
