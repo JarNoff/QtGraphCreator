@@ -28,15 +28,18 @@ SOURCES += \
         csvparser.cpp \
         dataview.cpp \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        openfiledialog.cpp
 
 HEADERS += \
         csvparser.h \
         dataview.h \
-        mainwindow.h
+        mainwindow.h \
+        openfiledialog.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+        openfiledialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

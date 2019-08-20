@@ -8,9 +8,12 @@
 class CSVParser
 {
 public:
-    CSVParser();
+    CSVParser(QString filePath);
+    ~CSVParser();
+
     QStringList getContents();
     QList<QList<QString>> getData();
+
     int getRowCount() const;
     int getColCount() const;
 private:

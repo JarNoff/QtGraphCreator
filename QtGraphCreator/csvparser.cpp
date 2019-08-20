@@ -1,10 +1,10 @@
 #include "csvparser.h"
 
 
-CSVParser::CSVParser()
+CSVParser::CSVParser(QString filePath)
 {
     //Try to read in data from file
-    QFile file("/home/jaret2/QtGraphCreator/data/2015.csv");
+    QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly))
     {
         qDebug() << file.errorString();
@@ -54,6 +54,12 @@ CSVParser::CSVParser()
 
 
     qDebug() << _data;
+}
+
+CSVParser::~CSVParser()
+{
+    //delete _data;
+    //delete _contents;
 }
 
 QList<QList<QString>> CSVParser::getData()

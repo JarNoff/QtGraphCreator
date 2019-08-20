@@ -1,27 +1,34 @@
 #include "dataview.h"
-#include "csvparser.h"
 
-DataView::DataView(QWidget* parent) : QTableWidget(parent)
+DataView::DataView(QString filePath, QWidget* parent) : QTableWidget(parent)
 {
-    CSVParser* parser = new CSVParser();
-    setRowCount(parser->getRowCount());
-    setColumnCount(parser->getColCount());
+    _parser = new CSVParser(filePath);
+    setRowCount(_parser->getRowCount());
+    setColumnCount(_parser->getColCount());
 
-    QList<QList<QString>> data = parser->getData();
-    setHorizontalHeaderLabels(parser->getContents());
+    populateTable();
 
-    int rowCount = parser->getRowCount();
-    int colCount = parser->getColCount();
+    //qDebug() << _data;
 
-    for (int i = 0; i < data.size(); i++)
+}
+
+DataView::~DataView()
+{
+    delete _parser;
+
+}
+
+void DataView::populateTable()
+{
+    _data = _parser->getData();
+    setHorizontalHeaderLabels(_parser->getContents());
+
+    for (int i = 0; i < _data.size(); i++)
     {
-        for (int j = 0; j < data.at(i).size(); j++)
+        for (int j = 0; j < _data.at(i).size(); j++)
         {
-            QTableWidgetItem* item = new QTableWidgetItem(data.at(i).at(j));
+            QTableWidgetItem* item = new QTableWidgetItem(_data.at(i).at(j));
             setItem(i, j, item);
         }
     }
-
-    qDebug() << data;
-
 }
