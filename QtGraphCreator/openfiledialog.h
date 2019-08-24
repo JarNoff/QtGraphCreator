@@ -22,6 +22,7 @@ public:
 private:
     Ui::OpenFileDialog *ui;
     QString _filePath;
+    QFileDialog* _dlg;
 
 public slots:
     void onBrowseFile();

@@ -17,15 +17,15 @@ OpenFileDialog::~OpenFileDialog()
 
 void OpenFileDialog::onBrowseFile()
 {
-    QFileDialog* dlg = new QFileDialog(this, "Choose a file...", QString(), "CSV (*.csv)");
-    dlg->setViewMode(QFileDialog::Detail);
-    dlg->setFileMode(QFileDialog::ExistingFile);
+    _dlg = new QFileDialog(this, "Choose a file...", QString(), "CSV (*.csv)");
+    _dlg->setViewMode(QFileDialog::Detail);
+    _dlg->setFileMode(QFileDialog::ExistingFile);
     QStringList fileName;
-    if (dlg->exec())
+    if (_dlg->exec())
     {
-        fileName = dlg->selectedFiles();
+        fileName = _dlg->selectedFiles();
         _filePath = fileName.first();
-        ui->fileLineEdit->setText(fileName.at(0));
+        ui->fileLineEdit->setText(_filePath);
 
         //check if path is valid and attempt to open file
         //emit fileOpened();

@@ -17,7 +17,6 @@ public:
     int getRowCount() const;
     int getColCount() const;
 private:
-    //QStringList _data;
     QList<QList<QString>> _data;
     QStringList _contents; //Keeps contents of header row in order, so we know which row is which
     int _rowCount;

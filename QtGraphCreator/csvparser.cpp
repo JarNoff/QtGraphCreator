@@ -1,6 +1,5 @@
 #include "csvparser.h"
 
-
 CSVParser::CSVParser(QString filePath)
 {
     //Try to read in data from file
@@ -9,51 +8,54 @@ CSVParser::CSVParser(QString filePath)
     {
         qDebug() << file.errorString();
     }
-
-    _data = QList<QList<QString>>();
-    _contents = QStringList();
-
-    _rowCount = -1;
-   _colCount = 0;
-    while(!file.atEnd())
+    else
     {
-        //If header row
-        if (_rowCount == -1)
+        _data = QList<QList<QString>>();
+        _contents = QStringList();
+
+        _rowCount = -1;
+       _colCount = 0;
+        while(!file.atEnd())
         {
-            QByteArray line = file.readLine();
-
-            //Get column count
-            //Uses comma delimter
-            QList<QByteArray> splits = line.split(',');
-
-            for (QByteArray array : splits)
+            //If header row
+            if (_rowCount == -1)
             {
-                _colCount++;
-                _contents.push_back(QString::fromStdString(array.toStdString())); //this is wacky
+                QByteArray line = file.readLine();
+
+                //Get column count
+                //Uses comma delimter
+
+                //Need to check for quotes. If Quotes, we don't split until we find the closung quote.
+                QList<QByteArray> splits = line.split(',');
+
+                for (QByteArray array : splits)
+                {
+                    _colCount++;
+                    _contents.push_back(QString::fromStdString(array.toStdString())); //this is wacky
+                }
+                _rowCount++;
             }
-            _rowCount++;
-        }
-        else
-        {
-            QByteArray line = file.readLine();
-            QList<QString> row = QList<QString>();
-
-            QList<QByteArray> splits = line.split(',');
-
-            for (QByteArray array : splits)
+            else
             {
-                row.push_back(QString::fromStdString(array.toStdString())); //this is wacky
+                QByteArray line = file.readLine();
+                QList<QString> row = QList<QString>();
+
+                QList<QByteArray> splits = line.split(',');
+
+                for (QByteArray array : splits)
+                {
+                    row.push_back(QString::fromStdString(array.toStdString())); //this is wacky
+                }
+
+                _data.push_back(row);
+
+                _rowCount++;
             }
-
-            _data.push_back(row);
-
-            _rowCount++;
         }
     }
+    file.close();
 
-
-
-    qDebug() << _data;
+    //qDebug() << _data;
 }
 
 CSVParser::~CSVParser()

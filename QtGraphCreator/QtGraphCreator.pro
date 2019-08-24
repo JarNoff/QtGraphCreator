@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        barchartdialog.cpp \
         csvparser.cpp \
         dataview.cpp \
         main.cpp \
@@ -32,12 +33,14 @@ SOURCES += \
         openfiledialog.cpp
 
 HEADERS += \
+        barchartdialog.h \
         csvparser.h \
         dataview.h \
         mainwindow.h \
         openfiledialog.h
 
 FORMS += \
+        barchartdialog.ui \
         mainwindow.ui \
         openfiledialog.ui
 
