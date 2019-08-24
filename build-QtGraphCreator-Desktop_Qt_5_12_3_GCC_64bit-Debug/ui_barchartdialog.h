@@ -19,6 +19,7 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -46,6 +47,11 @@ public:
     QFormLayout *formLayout_3;
     QLabel *graphTitleLabel;
     QLineEdit *graphTitlelineEdit;
+    QLabel *label;
+    QLineEdit *lineEdit;
+    QLineEdit *filePathLineEdit;
+    QLabel *filePathLabel;
+    QPushButton *browseButton;
     QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *BarChartDialog)
@@ -149,18 +155,43 @@ public:
 
         formLayout_3->setWidget(0, QFormLayout::FieldRole, graphTitlelineEdit);
 
+        label = new QLabel(properties);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        formLayout_3->setWidget(1, QFormLayout::LabelRole, label);
+
+        lineEdit = new QLineEdit(properties);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+
+        formLayout_3->setWidget(1, QFormLayout::FieldRole, lineEdit);
+
 
         gridLayout->addWidget(properties, 2, 0, 1, 1);
 
 
-        gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
+        gridLayout_2->addLayout(gridLayout, 0, 0, 1, 2);
+
+        filePathLineEdit = new QLineEdit(BarChartDialog);
+        filePathLineEdit->setObjectName(QString::fromUtf8("filePathLineEdit"));
+
+        gridLayout_2->addWidget(filePathLineEdit, 4, 0, 1, 1);
+
+        filePathLabel = new QLabel(BarChartDialog);
+        filePathLabel->setObjectName(QString::fromUtf8("filePathLabel"));
+
+        gridLayout_2->addWidget(filePathLabel, 3, 0, 1, 1);
+
+        browseButton = new QPushButton(BarChartDialog);
+        browseButton->setObjectName(QString::fromUtf8("browseButton"));
+
+        gridLayout_2->addWidget(browseButton, 4, 1, 1, 1);
 
         buttonBox = new QDialogButtonBox(BarChartDialog);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
 
-        gridLayout_2->addWidget(buttonBox, 2, 0, 1, 1);
+        gridLayout_2->addWidget(buttonBox, 5, 0, 1, 1, Qt::AlignLeft);
 
 
         retranslateUi(BarChartDialog);
@@ -182,6 +213,9 @@ public:
         canvasWidthLabel->setText(QApplication::translate("BarChartDialog", "Canvas Width:", nullptr));
         properties->setTitle(QApplication::translate("BarChartDialog", "Properties", nullptr));
         graphTitleLabel->setText(QApplication::translate("BarChartDialog", "Title:", nullptr));
+        label->setText(QApplication::translate("BarChartDialog", "Bar Color:", nullptr));
+        filePathLabel->setText(QApplication::translate("BarChartDialog", "File Path:", nullptr));
+        browseButton->setText(QApplication::translate("BarChartDialog", "Browse", nullptr));
     } // retranslateUi
 
 };

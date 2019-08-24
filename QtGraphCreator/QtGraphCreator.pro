@@ -26,6 +26,7 @@ CONFIG += c++11
 
 SOURCES += \
         barchartdialog.cpp \
+        bargraphgenerator.cpp \
         csvparser.cpp \
         d3constants.cpp \
         dataview.cpp \
@@ -35,6 +36,7 @@ SOURCES += \
 
 HEADERS += \
         barchartdialog.h \
+        bargraphgenerator.h \
         csvparser.h \
         d3constants.h \
         dataview.h \
@@ -45,6 +47,8 @@ FORMS += \
         barchartdialog.ui \
         mainwindow.ui \
         openfiledialog.ui
+
+INCLUDEPATH += /usr/include/boost
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
