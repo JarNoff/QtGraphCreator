@@ -65,7 +65,7 @@
          </widget>
         </item>
         <item row="3" column="1">
-         <widget class="QComboBox" name="comboBox_3"/>
+         <widget class="QComboBox" name="xAxisScaleCB"/>
         </item>
         <item row="4" column="0">
          <widget class="QLabel" name="yAxisLabel">
@@ -75,7 +75,7 @@
          </widget>
         </item>
         <item row="4" column="1">
-         <widget class="QComboBox" name="comboBox_4"/>
+         <widget class="QComboBox" name="yAxisScaleCB"/>
         </item>
         <item row="5" column="0">
          <widget class="QLabel" name="canvasHeightLabel">
@@ -85,7 +85,11 @@
          </widget>
         </item>
         <item row="5" column="1">
-         <widget class="QLineEdit" name="canvasHeightLineEdit"/>
+         <widget class="QLineEdit" name="canvasHeightLineEdit">
+          <property name="text">
+           <string>500</string>
+          </property>
+         </widget>
         </item>
         <item row="6" column="0">
          <widget class="QLabel" name="canvasWidthLabel">
@@ -95,7 +99,11 @@
          </widget>
         </item>
         <item row="6" column="1">
-         <widget class="QLineEdit" name="canvasWidthLineEdit"/>
+         <widget class="QLineEdit" name="canvasWidthLineEdit">
+          <property name="text">
+           <string>500</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>

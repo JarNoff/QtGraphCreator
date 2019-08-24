@@ -108,7 +108,8 @@ void MainWindow::onClose()
 
 void MainWindow::onGenerateBarChart()
 {
-    QStringList tableOfContents = _data->getParser()->getContents();
+    //Seg fault because of getParser function;
+    QStringList tableOfContents = _data->getParser().getContents();
     BarChartDialog* dlg = new BarChartDialog(tableOfContents, this);
     int val = dlg->exec();
     if (val == QDialog::Accepted) //Ok pressed

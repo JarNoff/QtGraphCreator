@@ -36,9 +36,9 @@ public:
     QLabel *yValLabel;
     QComboBox *yValCombo;
     QLabel *xAxisLabel;
-    QComboBox *comboBox_3;
+    QComboBox *xAxisScaleCB;
     QLabel *yAxisLabel;
-    QComboBox *comboBox_4;
+    QComboBox *yAxisScaleCB;
     QLabel *canvasHeightLabel;
     QLineEdit *canvasHeightLineEdit;
     QLabel *canvasWidthLabel;
@@ -103,20 +103,20 @@ public:
 
         formLayout_2->setWidget(3, QFormLayout::LabelRole, xAxisLabel);
 
-        comboBox_3 = new QComboBox(posAndScaling);
-        comboBox_3->setObjectName(QString::fromUtf8("comboBox_3"));
+        xAxisScaleCB = new QComboBox(posAndScaling);
+        xAxisScaleCB->setObjectName(QString::fromUtf8("xAxisScaleCB"));
 
-        formLayout_2->setWidget(3, QFormLayout::FieldRole, comboBox_3);
+        formLayout_2->setWidget(3, QFormLayout::FieldRole, xAxisScaleCB);
 
         yAxisLabel = new QLabel(posAndScaling);
         yAxisLabel->setObjectName(QString::fromUtf8("yAxisLabel"));
 
         formLayout_2->setWidget(4, QFormLayout::LabelRole, yAxisLabel);
 
-        comboBox_4 = new QComboBox(posAndScaling);
-        comboBox_4->setObjectName(QString::fromUtf8("comboBox_4"));
+        yAxisScaleCB = new QComboBox(posAndScaling);
+        yAxisScaleCB->setObjectName(QString::fromUtf8("yAxisScaleCB"));
 
-        formLayout_2->setWidget(4, QFormLayout::FieldRole, comboBox_4);
+        formLayout_2->setWidget(4, QFormLayout::FieldRole, yAxisScaleCB);
 
         canvasHeightLabel = new QLabel(posAndScaling);
         canvasHeightLabel->setObjectName(QString::fromUtf8("canvasHeightLabel"));
@@ -210,7 +210,9 @@ public:
         xAxisLabel->setText(QApplication::translate("BarChartDialog", "X Axis Scaling:", nullptr));
         yAxisLabel->setText(QApplication::translate("BarChartDialog", "Y Axis Scaling:", nullptr));
         canvasHeightLabel->setText(QApplication::translate("BarChartDialog", "Canvas Height:", nullptr));
+        canvasHeightLineEdit->setText(QApplication::translate("BarChartDialog", "500", nullptr));
         canvasWidthLabel->setText(QApplication::translate("BarChartDialog", "Canvas Width:", nullptr));
+        canvasWidthLineEdit->setText(QApplication::translate("BarChartDialog", "500", nullptr));
         properties->setTitle(QApplication::translate("BarChartDialog", "Properties", nullptr));
         graphTitleLabel->setText(QApplication::translate("BarChartDialog", "Title:", nullptr));
         label->setText(QApplication::translate("BarChartDialog", "Bar Color:", nullptr));

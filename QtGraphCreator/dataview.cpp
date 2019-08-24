@@ -71,7 +71,7 @@ void DataView::saveToFile()
     }
 }
 
-CSVParser* DataView::getParser()
+CSVParser& DataView::getParser()
 {
-    return _parser;
+    return *_parser;
 }

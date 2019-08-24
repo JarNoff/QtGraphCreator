@@ -797,6 +797,10 @@ moc_barchartdialog.cpp: ../QtGraphCreator/barchartdialog.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/QAbstractButton \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtGui/qicon.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/QFileDialog \
+		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qdir.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qfileinfo.h \
 		../QtGraphCreator/bargraphgenerator.h \
 		moc_predefs.h \
 		../../../../Qt/5.12.3/gcc_64/bin/moc
@@ -1330,6 +1334,10 @@ barchartdialog.o: ../QtGraphCreator/barchartdialog.cpp ../QtGraphCreator/barchar
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/QAbstractButton \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtGui/qicon.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/QFileDialog \
+		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qdir.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qfileinfo.h \
 		../QtGraphCreator/bargraphgenerator.h \
 		ui_barchartdialog.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtCore/QVariant \
@@ -1374,7 +1382,9 @@ barchartdialog.o: ../QtGraphCreator/barchartdialog.cpp ../QtGraphCreator/barchar
 		../../../../Qt/5.12.3/gcc_64/include/QtGui/qtextcursor.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtGui/qtextformat.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtGui/qpen.h \
-		../../../../Qt/5.12.3/gcc_64/include/QtGui/qtextoption.h
+		../../../../Qt/5.12.3/gcc_64/include/QtGui/qtextoption.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/QPushButton \
+		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/qpushbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o barchartdialog.o ../QtGraphCreator/barchartdialog.cpp
 
 bargraphgenerator.o: ../QtGraphCreator/bargraphgenerator.cpp ../QtGraphCreator/bargraphgenerator.h

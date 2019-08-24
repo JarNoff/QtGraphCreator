@@ -15,7 +15,7 @@ public:
 
     QString getDataViewData();
     void saveToFile();
-    CSVParser* getParser();
+    CSVParser& getParser();
 private:
     void populateTable();
 

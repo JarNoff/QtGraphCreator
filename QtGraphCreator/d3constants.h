@@ -13,6 +13,13 @@ namespace GraphCreator
         public:
             //contains the lines that need to be modified to generate the bar chart
             //This may not be the best way to go about this, but this is how I am going to do it for now
+            enum scaling
+            {
+                ScaleLinear = 0,
+                ScaleOrdinal,
+                ScaleLog,
+                ScaleSequential
+            };
 
             //X and Y Scaling
             static const QString scaleLinear;

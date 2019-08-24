@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_BarChartDialog_t {
-    QByteArrayData data[7];
-    char stringdata0[89];
+    QByteArrayData data[15];
+    char stringdata0[215];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,12 +37,23 @@ QT_MOC_LITERAL(2, 34, 0), // ""
 QT_MOC_LITERAL(3, 35, 16), // "QAbstractButton*"
 QT_MOC_LITERAL(4, 52, 6), // "button"
 QT_MOC_LITERAL(5, 59, 21), // "onBrowseButtonPressed"
-QT_MOC_LITERAL(6, 81, 7) // "checked"
+QT_MOC_LITERAL(6, 81, 7), // "checked"
+QT_MOC_LITERAL(7, 89, 15), // "onXValueChanged"
+QT_MOC_LITERAL(8, 105, 3), // "val"
+QT_MOC_LITERAL(9, 109, 15), // "onYValueChanged"
+QT_MOC_LITERAL(10, 125, 15), // "onXScaleChanged"
+QT_MOC_LITERAL(11, 141, 15), // "onYScaleChanged"
+QT_MOC_LITERAL(12, 157, 14), // "onTitleChanged"
+QT_MOC_LITERAL(13, 172, 21), // "onCanvasHeightChanged"
+QT_MOC_LITERAL(14, 194, 20) // "onCanvasWidthChanged"
 
     },
     "BarChartDialog\0onButtonBoxPressed\0\0"
     "QAbstractButton*\0button\0onBrowseButtonPressed\0"
-    "checked"
+    "checked\0onXValueChanged\0val\0onYValueChanged\0"
+    "onXScaleChanged\0onYScaleChanged\0"
+    "onTitleChanged\0onCanvasHeightChanged\0"
+    "onCanvasWidthChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,7 +63,7 @@ static const uint qt_meta_data_BarChartDialog[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -60,12 +71,26 @@ static const uint qt_meta_data_BarChartDialog[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   24,    2, 0x0a /* Public */,
-       5,    1,   27,    2, 0x0a /* Public */,
+       1,    1,   59,    2, 0x0a /* Public */,
+       5,    1,   62,    2, 0x0a /* Public */,
+       7,    1,   65,    2, 0x0a /* Public */,
+       9,    1,   68,    2, 0x0a /* Public */,
+      10,    1,   71,    2, 0x0a /* Public */,
+      11,    1,   74,    2, 0x0a /* Public */,
+      12,    0,   77,    2, 0x0a /* Public */,
+      13,    0,   78,    2, 0x0a /* Public */,
+      14,    0,   79,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
     QMetaType::Void, QMetaType::Bool,    6,
+    QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -78,6 +103,13 @@ void BarChartDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         switch (_id) {
         case 0: _t->onButtonBoxPressed((*reinterpret_cast< QAbstractButton*(*)>(_a[1]))); break;
         case 1: _t->onBrowseButtonPressed((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 2: _t->onXValueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->onYValueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: _t->onXScaleChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 5: _t->onYScaleChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->onTitleChanged(); break;
+        case 7: _t->onCanvasHeightChanged(); break;
+        case 8: _t->onCanvasWidthChanged(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -123,13 +155,13 @@ int BarChartDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 9;
     }
     return _id;
 }
