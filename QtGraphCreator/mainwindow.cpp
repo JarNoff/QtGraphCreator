@@ -33,7 +33,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
    _graphGeneration->addAction(_generateBarChart);
 
-
    _menuBar = new QMenuBar(this);
    _menuBar->addMenu(_fileMenu);
    _menuBar->addMenu(_editMenu);

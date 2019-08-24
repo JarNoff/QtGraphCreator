@@ -27,8 +27,8 @@ BarChartDialog::BarChartDialog(QStringList tableOfContents, QWidget *parent) :
 
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(onButtonBoxPressed(QAbstractButton*)));
     connect(ui->browseButton, SIGNAL(clicked(bool)), this, SLOT(onBrowseButtonPressed(bool)));
-    connect(ui->canvasWidthLabel, SIGNAL(editingFinished()), this, SLOT(onCanvasWidthChanged()));
-    connect(ui->canvasHeightLabel, SIGNAL(editingFinished()), this, SLOT(onCanvasHeightChanged()));
+    connect(ui->canvasWidthLineEdit, SIGNAL(editingFinished()), this, SLOT(onCanvasWidthChanged()));
+    connect(ui->canvasHeightLineEdit, SIGNAL(editingFinished()), this, SLOT(onCanvasHeightChanged()));
     connect(ui->graphTitlelineEdit, SIGNAL(editingFinished()), this, SLOT(onTitleChanged()));
     connect(ui->xAxisScaleCB, SIGNAL(currentIndexChanged(int)), this, SLOT(onXScaleChanged(int)));
     connect(ui->yAxisScaleCB, SIGNAL(currentIndexChanged(int)), this, SLOT(onYScaleChanged(int)));
@@ -47,7 +47,10 @@ void BarChartDialog::onButtonBoxPressed(QAbstractButton* button)
 {
     if ((QPushButton *)button == ui->buttonBox->button(QDialogButtonBox::Ok))
     {
-        BarGraphGenerator* bar = new BarGraphGenerator();
+        //Construct Bar Chart Information Object
+        BarChartInformation* info = new BarChartInformation(_xValue, _yValue, _graphTitle, _xScale, _yScale, _canvasHeight, _canvasWidth, _filePath);
+        //Construct Generator
+        BarGraphGenerator* bar = new BarGraphGenerator(info);
     }
 }
 

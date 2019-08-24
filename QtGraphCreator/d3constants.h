@@ -28,23 +28,23 @@ namespace GraphCreator
             static const QString scaleSequential;
 
             //HTML File Stuff
-            static const QString HtmlHeader;
-            static const QString GenericHtmlBody;
+            static std::string HtmlHeader;
+            static std::string GenericHtmlBody;
 
             //JS
-            static QString canvasWidth;
-            static QString canvasHeight;
+            static std::string canvasWidth;
+            static std::string canvasHeight;
 
-            static QString svgCreation;
-            static QString xScaling;
-            static QString yScaling;
+            static std::string svgCreation;
+            static std::string xScaling;
+            static std::string yScaling;
 
-            static QString genericCSVDataLoop;
-            static QString mapX;
-            static QString mapY;
+            static std::string genericCSVDataLoop;
+            static std::string mapX;
+            static std::string mapY;
 
-            static QString buildRects;
-            static QString setRectAttributes;
+            static std::string buildRects;
+            static std::string setRectAttributes;
         };
     }
 }

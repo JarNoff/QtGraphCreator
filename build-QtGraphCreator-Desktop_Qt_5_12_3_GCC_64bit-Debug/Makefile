@@ -252,6 +252,7 @@ DIST          = ../../../../Qt/5.12.3/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.12.3/gcc_64/mkspecs/features/yacc.prf \
 		../../../../Qt/5.12.3/gcc_64/mkspecs/features/lex.prf \
 		../QtGraphCreator/QtGraphCreator.pro ../QtGraphCreator/barchartdialog.h \
+		../QtGraphCreator/barchartinformation.h \
 		../QtGraphCreator/bargraphgenerator.h \
 		../QtGraphCreator/csvparser.h \
 		../QtGraphCreator/d3constants.h \
@@ -652,7 +653,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt/5.12.3/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../QtGraphCreator/barchartdialog.h ../QtGraphCreator/bargraphgenerator.h ../QtGraphCreator/csvparser.h ../QtGraphCreator/d3constants.h ../QtGraphCreator/dataview.h ../QtGraphCreator/mainwindow.h ../QtGraphCreator/openfiledialog.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../QtGraphCreator/barchartdialog.h ../QtGraphCreator/barchartinformation.h ../QtGraphCreator/bargraphgenerator.h ../QtGraphCreator/csvparser.h ../QtGraphCreator/d3constants.h ../QtGraphCreator/dataview.h ../QtGraphCreator/mainwindow.h ../QtGraphCreator/openfiledialog.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../QtGraphCreator/barchartdialog.cpp ../QtGraphCreator/bargraphgenerator.cpp ../QtGraphCreator/csvparser.cpp ../QtGraphCreator/d3constants.cpp ../QtGraphCreator/dataview.cpp ../QtGraphCreator/main.cpp ../QtGraphCreator/mainwindow.cpp ../QtGraphCreator/openfiledialog.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../QtGraphCreator/barchartdialog.ui ../QtGraphCreator/mainwindow.ui ../QtGraphCreator/openfiledialog.ui $(DISTDIR)/
 
@@ -802,6 +803,8 @@ moc_barchartdialog.cpp: ../QtGraphCreator/barchartdialog.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtCore/qdir.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtCore/qfileinfo.h \
 		../QtGraphCreator/bargraphgenerator.h \
+		../QtGraphCreator/barchartinformation.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/QString \
 		moc_predefs.h \
 		../../../../Qt/5.12.3/gcc_64/bin/moc
 	/home/jaret2/Qt/5.12.3/gcc_64/bin/moc $(DEFINES) --include /home/jaret2/QtGraphCreator/git/QtGraphCreator/build-QtGraphCreator-Desktop_Qt_5_12_3_GCC_64bit-Debug/moc_predefs.h -I/home/jaret2/Qt/5.12.3/gcc_64/mkspecs/linux-g++ -I/home/jaret2/QtGraphCreator/git/QtGraphCreator/QtGraphCreator -I/usr/include/boost -I/home/jaret2/Qt/5.12.3/gcc_64/include -I/home/jaret2/Qt/5.12.3/gcc_64/include/QtWidgets -I/home/jaret2/Qt/5.12.3/gcc_64/include/QtGui -I/home/jaret2/Qt/5.12.3/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../QtGraphCreator/barchartdialog.h -o moc_barchartdialog.cpp
@@ -1080,6 +1083,8 @@ moc_mainwindow.cpp: ../QtGraphCreator/mainwindow.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/QAbstractButton \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../QtGraphCreator/bargraphgenerator.h \
+		../QtGraphCreator/barchartinformation.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/QString \
 		moc_predefs.h \
 		../../../../Qt/5.12.3/gcc_64/bin/moc
 	/home/jaret2/Qt/5.12.3/gcc_64/bin/moc $(DEFINES) --include /home/jaret2/QtGraphCreator/git/QtGraphCreator/build-QtGraphCreator-Desktop_Qt_5_12_3_GCC_64bit-Debug/moc_predefs.h -I/home/jaret2/Qt/5.12.3/gcc_64/mkspecs/linux-g++ -I/home/jaret2/QtGraphCreator/git/QtGraphCreator/QtGraphCreator -I/usr/include/boost -I/home/jaret2/Qt/5.12.3/gcc_64/include -I/home/jaret2/Qt/5.12.3/gcc_64/include/QtWidgets -I/home/jaret2/Qt/5.12.3/gcc_64/include/QtGui -I/home/jaret2/Qt/5.12.3/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../QtGraphCreator/mainwindow.h -o moc_mainwindow.cpp
@@ -1339,6 +1344,8 @@ barchartdialog.o: ../QtGraphCreator/barchartdialog.cpp ../QtGraphCreator/barchar
 		../../../../Qt/5.12.3/gcc_64/include/QtCore/qdir.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtCore/qfileinfo.h \
 		../QtGraphCreator/bargraphgenerator.h \
+		../QtGraphCreator/barchartinformation.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/QString \
 		ui_barchartdialog.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtCore/QVariant \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/QApplication \
@@ -1387,7 +1394,40 @@ barchartdialog.o: ../QtGraphCreator/barchartdialog.cpp ../QtGraphCreator/barchar
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/qpushbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o barchartdialog.o ../QtGraphCreator/barchartdialog.cpp
 
-bargraphgenerator.o: ../QtGraphCreator/bargraphgenerator.cpp ../QtGraphCreator/bargraphgenerator.h
+bargraphgenerator.o: ../QtGraphCreator/bargraphgenerator.cpp ../QtGraphCreator/bargraphgenerator.h \
+		../QtGraphCreator/barchartinformation.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/QString \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qstring.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qchar.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qglobal.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qconfig.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qtcore-config.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qsysinfo.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qlogging.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qflags.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qatomic.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qmutex.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qnumeric.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qversiontagging.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qbytearray.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qrefcount.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qnamespace.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qarraydata.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qstringliteral.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qstringview.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/qstringbuilder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bargraphgenerator.o ../QtGraphCreator/bargraphgenerator.cpp
 
 csvparser.o: ../QtGraphCreator/csvparser.cpp ../QtGraphCreator/csvparser.h \
@@ -1768,6 +1808,8 @@ main.o: ../QtGraphCreator/main.cpp ../QtGraphCreator/mainwindow.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/QAbstractButton \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../QtGraphCreator/bargraphgenerator.h \
+		../QtGraphCreator/barchartinformation.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/QString \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/QApplication \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/qapplication.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1919,6 +1961,8 @@ mainwindow.o: ../QtGraphCreator/mainwindow.cpp ../QtGraphCreator/mainwindow.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/QAbstractButton \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../QtGraphCreator/bargraphgenerator.h \
+		../QtGraphCreator/barchartinformation.h \
+		../../../../Qt/5.12.3/gcc_64/include/QtCore/QString \
 		ui_mainwindow.h \
 		../../../../Qt/5.12.3/gcc_64/include/QtCore/QVariant \
 		../../../../Qt/5.12.3/gcc_64/include/QtWidgets/QApplication \

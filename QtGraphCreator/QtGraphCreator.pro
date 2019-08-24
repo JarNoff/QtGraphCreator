@@ -36,6 +36,7 @@ SOURCES += \
 
 HEADERS += \
         barchartdialog.h \
+        barchartinformation.h \
         bargraphgenerator.h \
         csvparser.h \
         d3constants.h \
