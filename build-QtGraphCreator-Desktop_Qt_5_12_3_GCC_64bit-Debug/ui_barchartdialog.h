@@ -18,6 +18,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -26,18 +27,25 @@ class Ui_BarChartDialog
 public:
     QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
-    QGroupBox *groupBox_2;
-    QGroupBox *groupBox;
+    QGroupBox *posAndScaling;
     QFormLayout *formLayout_2;
     QFormLayout *formLayout;
-    QLabel *label;
+    QLabel *xValLabel;
     QComboBox *xValCombo;
-    QLabel *label_2;
+    QLabel *yValLabel;
     QComboBox *yValCombo;
-    QLabel *label_3;
+    QLabel *xAxisLabel;
     QComboBox *comboBox_3;
-    QLabel *label_4;
+    QLabel *yAxisLabel;
     QComboBox *comboBox_4;
+    QLabel *canvasHeightLabel;
+    QLineEdit *canvasHeightLineEdit;
+    QLabel *canvasWidthLabel;
+    QLineEdit *canvasWidthLineEdit;
+    QGroupBox *properties;
+    QFormLayout *formLayout_3;
+    QLabel *graphTitleLabel;
+    QLineEdit *graphTitlelineEdit;
     QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *BarChartDialog)
@@ -49,67 +57,100 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        groupBox_2 = new QGroupBox(BarChartDialog);
-        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-
-        gridLayout->addWidget(groupBox_2, 1, 0, 1, 1);
-
-        groupBox = new QGroupBox(BarChartDialog);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        posAndScaling = new QGroupBox(BarChartDialog);
+        posAndScaling->setObjectName(QString::fromUtf8("posAndScaling"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
-        groupBox->setSizePolicy(sizePolicy);
-        formLayout_2 = new QFormLayout(groupBox);
+        sizePolicy.setHeightForWidth(posAndScaling->sizePolicy().hasHeightForWidth());
+        posAndScaling->setSizePolicy(sizePolicy);
+        posAndScaling->setMaximumSize(QSize(380, 380));
+        formLayout_2 = new QFormLayout(posAndScaling);
         formLayout_2->setObjectName(QString::fromUtf8("formLayout_2"));
         formLayout = new QFormLayout();
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
 
         formLayout_2->setLayout(0, QFormLayout::LabelRole, formLayout);
 
-        label = new QLabel(groupBox);
-        label->setObjectName(QString::fromUtf8("label"));
+        xValLabel = new QLabel(posAndScaling);
+        xValLabel->setObjectName(QString::fromUtf8("xValLabel"));
 
-        formLayout_2->setWidget(1, QFormLayout::LabelRole, label);
+        formLayout_2->setWidget(1, QFormLayout::LabelRole, xValLabel);
 
-        xValCombo = new QComboBox(groupBox);
+        xValCombo = new QComboBox(posAndScaling);
         xValCombo->setObjectName(QString::fromUtf8("xValCombo"));
 
         formLayout_2->setWidget(1, QFormLayout::FieldRole, xValCombo);
 
-        label_2 = new QLabel(groupBox);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        yValLabel = new QLabel(posAndScaling);
+        yValLabel->setObjectName(QString::fromUtf8("yValLabel"));
 
-        formLayout_2->setWidget(2, QFormLayout::LabelRole, label_2);
+        formLayout_2->setWidget(2, QFormLayout::LabelRole, yValLabel);
 
-        yValCombo = new QComboBox(groupBox);
+        yValCombo = new QComboBox(posAndScaling);
         yValCombo->setObjectName(QString::fromUtf8("yValCombo"));
 
         formLayout_2->setWidget(2, QFormLayout::FieldRole, yValCombo);
 
-        label_3 = new QLabel(groupBox);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        xAxisLabel = new QLabel(posAndScaling);
+        xAxisLabel->setObjectName(QString::fromUtf8("xAxisLabel"));
 
-        formLayout_2->setWidget(3, QFormLayout::LabelRole, label_3);
+        formLayout_2->setWidget(3, QFormLayout::LabelRole, xAxisLabel);
 
-        comboBox_3 = new QComboBox(groupBox);
+        comboBox_3 = new QComboBox(posAndScaling);
         comboBox_3->setObjectName(QString::fromUtf8("comboBox_3"));
 
         formLayout_2->setWidget(3, QFormLayout::FieldRole, comboBox_3);
 
-        label_4 = new QLabel(groupBox);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        yAxisLabel = new QLabel(posAndScaling);
+        yAxisLabel->setObjectName(QString::fromUtf8("yAxisLabel"));
 
-        formLayout_2->setWidget(4, QFormLayout::LabelRole, label_4);
+        formLayout_2->setWidget(4, QFormLayout::LabelRole, yAxisLabel);
 
-        comboBox_4 = new QComboBox(groupBox);
+        comboBox_4 = new QComboBox(posAndScaling);
         comboBox_4->setObjectName(QString::fromUtf8("comboBox_4"));
 
         formLayout_2->setWidget(4, QFormLayout::FieldRole, comboBox_4);
 
+        canvasHeightLabel = new QLabel(posAndScaling);
+        canvasHeightLabel->setObjectName(QString::fromUtf8("canvasHeightLabel"));
 
-        gridLayout->addWidget(groupBox, 0, 0, 1, 1);
+        formLayout_2->setWidget(5, QFormLayout::LabelRole, canvasHeightLabel);
+
+        canvasHeightLineEdit = new QLineEdit(posAndScaling);
+        canvasHeightLineEdit->setObjectName(QString::fromUtf8("canvasHeightLineEdit"));
+
+        formLayout_2->setWidget(5, QFormLayout::FieldRole, canvasHeightLineEdit);
+
+        canvasWidthLabel = new QLabel(posAndScaling);
+        canvasWidthLabel->setObjectName(QString::fromUtf8("canvasWidthLabel"));
+
+        formLayout_2->setWidget(6, QFormLayout::LabelRole, canvasWidthLabel);
+
+        canvasWidthLineEdit = new QLineEdit(posAndScaling);
+        canvasWidthLineEdit->setObjectName(QString::fromUtf8("canvasWidthLineEdit"));
+
+        formLayout_2->setWidget(6, QFormLayout::FieldRole, canvasWidthLineEdit);
+
+
+        gridLayout->addWidget(posAndScaling, 1, 0, 1, 1);
+
+        properties = new QGroupBox(BarChartDialog);
+        properties->setObjectName(QString::fromUtf8("properties"));
+        formLayout_3 = new QFormLayout(properties);
+        formLayout_3->setObjectName(QString::fromUtf8("formLayout_3"));
+        graphTitleLabel = new QLabel(properties);
+        graphTitleLabel->setObjectName(QString::fromUtf8("graphTitleLabel"));
+
+        formLayout_3->setWidget(0, QFormLayout::LabelRole, graphTitleLabel);
+
+        graphTitlelineEdit = new QLineEdit(properties);
+        graphTitlelineEdit->setObjectName(QString::fromUtf8("graphTitlelineEdit"));
+
+        formLayout_3->setWidget(0, QFormLayout::FieldRole, graphTitlelineEdit);
+
+
+        gridLayout->addWidget(properties, 2, 0, 1, 1);
 
 
         gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
@@ -132,12 +173,15 @@ public:
     void retranslateUi(QDialog *BarChartDialog)
     {
         BarChartDialog->setWindowTitle(QApplication::translate("BarChartDialog", "Dialog", nullptr));
-        groupBox_2->setTitle(QApplication::translate("BarChartDialog", "GroupBox", nullptr));
-        groupBox->setTitle(QApplication::translate("BarChartDialog", "Positioning and Scaling", nullptr));
-        label->setText(QApplication::translate("BarChartDialog", "X Value:", nullptr));
-        label_2->setText(QApplication::translate("BarChartDialog", "Y Value:", nullptr));
-        label_3->setText(QApplication::translate("BarChartDialog", "X Axis Scaling:", nullptr));
-        label_4->setText(QApplication::translate("BarChartDialog", "Y Axis Scaling:", nullptr));
+        posAndScaling->setTitle(QApplication::translate("BarChartDialog", "Positioning and Scaling", nullptr));
+        xValLabel->setText(QApplication::translate("BarChartDialog", "X Value:", nullptr));
+        yValLabel->setText(QApplication::translate("BarChartDialog", "Y Value:", nullptr));
+        xAxisLabel->setText(QApplication::translate("BarChartDialog", "X Axis Scaling:", nullptr));
+        yAxisLabel->setText(QApplication::translate("BarChartDialog", "Y Axis Scaling:", nullptr));
+        canvasHeightLabel->setText(QApplication::translate("BarChartDialog", "Canvas Height:", nullptr));
+        canvasWidthLabel->setText(QApplication::translate("BarChartDialog", "Canvas Width:", nullptr));
+        properties->setTitle(QApplication::translate("BarChartDialog", "Properties", nullptr));
+        graphTitleLabel->setText(QApplication::translate("BarChartDialog", "Title:", nullptr));
     } // retranslateUi
 
 };

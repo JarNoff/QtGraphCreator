@@ -27,6 +27,7 @@ CONFIG += c++11
 SOURCES += \
         barchartdialog.cpp \
         csvparser.cpp \
+        d3constants.cpp \
         dataview.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -35,6 +36,7 @@ SOURCES += \
 HEADERS += \
         barchartdialog.h \
         csvparser.h \
+        d3constants.h \
         dataview.h \
         mainwindow.h \
         openfiledialog.h
