@@ -16,11 +16,13 @@ BarChartDialog::BarChartDialog(QStringList tableOfContents, QWidget *parent) :
     ui->xAxisScaleCB->addItem("Scale Ordinal");
     ui->xAxisScaleCB->addItem("Scale Log");
     ui->xAxisScaleCB->addItem("Scale Sequential");
+    ui->xAxisScaleCB->addItem("Scale Band");
 
     ui->yAxisScaleCB->addItem("Scale Linear");
     ui->yAxisScaleCB->addItem("Scale Ordinal");
     ui->yAxisScaleCB->addItem("Scale Log");
     ui->yAxisScaleCB->addItem("Scale Sequential");
+    ui->yAxisScaleCB->addItem("Scale Band");
 
     ui->canvasHeightLineEdit->setValidator(new QDoubleValidator(0, 1000, 3, this));
     ui->canvasWidthLineEdit->setValidator(new QDoubleValidator(0, 1000, 3, this));

@@ -18,7 +18,8 @@ namespace GraphCreator
                 ScaleLinear = 0,
                 ScaleOrdinal,
                 ScaleLog,
-                ScaleSequential
+                ScaleSequential,
+                ScaleBand
             };
 
             //X and Y Scaling
@@ -26,6 +27,7 @@ namespace GraphCreator
             static const QString scaleOrdinal;
             static const QString scaleLog;
             static const QString scaleSequential;
+            static const QString scaleBand;
 
             //HTML File Stuff
             static std::string HtmlHeader;

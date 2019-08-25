@@ -12,7 +12,11 @@ class BarGraphGenerator
 {
 public:
     BarGraphGenerator(BarChartInformation* graph);
+    virtual inline ~BarGraphGenerator() {}
 private:
+    void generateHTMLFile();
+    void generateJSFile();
+
     QString _xValue;
     QString _yValue;
     QString _title;
