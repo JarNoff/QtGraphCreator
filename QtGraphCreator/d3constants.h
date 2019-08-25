@@ -30,8 +30,10 @@ namespace GraphCreator
             //HTML File Stuff
             static std::string HtmlHeader;
             static std::string GenericHtmlBody;
+            static std::string ScriptTag;
 
             //JS
+            static std::string canvasMargin;
             static std::string canvasWidth;
             static std::string canvasHeight;
 
@@ -45,6 +47,8 @@ namespace GraphCreator
 
             static std::string buildRects;
             static std::string setRectAttributes;
+
+            static std::string closingBracket;
         };
     }
 }

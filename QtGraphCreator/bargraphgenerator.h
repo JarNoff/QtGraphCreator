@@ -4,6 +4,7 @@
 #include <boost/format.hpp>
 #include <barchartinformation.h>
 #include <QFile>
+#include <QDir>
 #include "d3constants.h"
 #include <QTextStream>
 
@@ -15,10 +16,10 @@ private:
     QString _xValue;
     QString _yValue;
     QString _title;
-    int _scalingX;
-    int _scalingY;
-    qreal _height;
-    qreal _width;
+    QString _scalingX;
+    QString _scalingY;
+    QString _height;
+    QString _width;
     QString _saveDirectory;
 };
 
